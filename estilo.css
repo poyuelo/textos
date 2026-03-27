@@ -17,28 +17,25 @@ html, body {
     width: 100vw;
     height: 100vh;
     z-index: 1;
-    /* 🛑 EDITA AQUÍ TU IMAGEN PRINCIPAL (EL GATO) */
-    background-image: url('images/fondo_inicial.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    
-    /* 🛑 SOLUCIÓN: Eliminada la transición de 'filter' */
+    /* Mantenemos nitidez total */
     transition: background-image 0.2s ease-in-out;
 }
 
-/* 🛑 SOLUCIÓN: Clase forzada a NO difuminar */
+/* Forzado para que no difumine nunca la imagen */
 .blurred {
-    filter: none !important; /* Desactiva cualquier desenfoque matemático */
+    filter: none !important;
 }
 
 .main-container {
     position: relative;
     z-index: 10;
-    /* 🛑 BAJADA LA DIFUMINACIÓN Y OPACIDAD: Ahora es más transparente */
-    background-color: rgba(30, 25, 20, 0.6); 
-    backdrop-filter: blur(8px); /* Antes estaba en 15px */
-    -webkit-backdrop-filter: blur(8px);
+    /* Recuadro más transparente (0.55) y menos desenfoque (6px) */
+    background-color: rgba(30, 25, 20, 0.55); 
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
     
     padding: 45px;
     border-radius: 25px;
@@ -48,7 +45,6 @@ html, body {
     border: 1px solid rgba(255, 245, 225, 0.1);
 }
 
-/* Autor: Crema muy suave y transparente */
 .author-name {
     color: rgba(255, 245, 225, 0.4); 
     font-size: 13px;
@@ -59,14 +55,12 @@ html, body {
     display: block;
 }
 
-/* Título: Crema Intenso / Hueso */
 .main-title {
-    color: #fff5e6; 
+    color: #fff5e6; /* Crema intenso */
     font-size: 28px;
     font-weight: 600;
     text-align: center;
     margin-bottom: 25px;
-    letter-spacing: 0.5px;
 }
 
 .separator {
@@ -83,32 +77,25 @@ html, body {
 
 .links-list li {
     margin: 0; 
-    /* Números en Crema Suave */
-    color: #ece0d1; 
+    color: #ece0d1; /* Crema suave */
     font-size: 20px;
     display: flex;
     align-items: center;
 }
 
 .links-list a {
-    /* Links en el mismo tono Crema que los números */
-    color: #ece0d1; 
+    color: #ece0d1;
     text-decoration: none;
-    font-weight: 400;
     transition: all 0.3s ease;
     display: flex;
     width: 100%;
-    padding: 12px 15px; 
+    padding: 12px 15px; /* Zona táctil amplia */
 }
 
-/* Efecto hover: Brillo blanco/crema puro */
+/* Efecto Brillo al pasar el ratón */
 .links-list a:hover {
     color: #ffffff;
-    /* Brillo cálido acorde a la paleta */
+    background-color: transparent;
     text-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 245, 225, 0.5);
     transform: translateX(10px);
-}
-
-.links-list a:empty::before {
-    content: "Pulsa para ver el texto";
 }
