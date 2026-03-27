@@ -1,15 +1,15 @@
-/* 🛑 EDITA AQUÍ TU IMAGEN PRINCIPAL (EL GATO) */
+
 const fotoPrincipalUrl = 'images/foto.png';
 
 const bgImage = document.getElementById('bg-image');
 const enlaces = document.querySelectorAll('.links-list a');
 
-// Asegura que la imagen cargue al entrar a la web
+
 window.onload = () => {
     bgImage.style.backgroundImage = `url('${fotoPrincipalUrl}')`;
 };
 
-// Precarga de imágenes para evitar parpadeos blancos
+
 enlaces.forEach(enlace => {
     const img = new Image();
     img.src = enlace.getAttribute('data-foto');

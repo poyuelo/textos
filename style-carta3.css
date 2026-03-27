@@ -1,0 +1,98 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f4f0; 
+    font-family: 'Lora', serif; 
+    overflow-x: hidden;
+}
+
+.escena-naturaleza {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+}
+
+
+.hojas-caida {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none;
+    background-image: 
+        radial-gradient(circle at 10% 10%, #81c784 1px, transparent 2px),
+        radial-gradient(circle at 90% 40%, #a5d6a7 2px, transparent 3px),
+        radial-gradient(circle at 50% 80%, #c8e6c9 1px, transparent 2px);
+    background-size: 150px 150px;
+    animation: caer 10s linear infinite;
+    opacity: 0.6;
+    z-index: 1;
+}
+
+@keyframes caer {
+    0% { transform: translateY(-150px); }
+    100% { transform: translateY(150px); }
+}
+
+.contenedor-texto-naturaleza {
+    position: relative;
+    z-index: 10;
+    width: 90%;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    color: #1b5e20; 
+    line-height: 1.9;
+    font-size: 1.25rem;
+    text-align: justify;
+}
+
+.contenedor-texto-naturaleza p {
+    margin-bottom: 1.6em;
+    text-indent: 40px; 
+}
+
+
+.boton-contenedor {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.boton-volver {
+    display: inline-block;
+    text-decoration: none;
+    color: #2e7d32;
+    border: 1px solid #2e7d32;
+    padding: 12px 30px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.boton-volver:hover {
+    background: #2e7d32;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+
+@media (max-width: 768px) {
+    .contenedor-texto-naturaleza {
+        width: 95%;
+        font-size: 1.1rem;
+        line-height: 1.7;
+        padding: 15px;
+    }
+
+    .contenedor-texto-naturaleza p {
+        text-indent: 25px; 
+        margin-bottom: 1.3em;
+    }
+}

@@ -1,0 +1,120 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #02010a; 
+    font-family: 'Quicksand', sans-serif;
+    overflow-x: hidden;
+}
+
+.escena-espacial {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+}
+
+
+.stars {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100%; height: 100%;
+    display: block;
+    z-index: 1;
+}
+
+
+.stars-small {
+    background: transparent url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
+    opacity: 0.5;
+    animation: twinkle 5s infinite ease-in-out;
+}
+
+
+.stars-large {
+    background: transparent radial-gradient(2px 2px at 20px 30px, #eee, rgba(0,0,0,0)),
+                transparent radial-gradient(2px 2px at 40px 70px, #fff, rgba(0,0,0,0)),
+                transparent radial-gradient(2px 2px at 50px 160px, #ddd, rgba(0,0,0,0));
+    background-size: 200px 200px;
+    animation: twinkle 3s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+    0% { opacity: 0.3; }
+    50% { opacity: 0.8; }
+    100% { opacity: 0.3; }
+}
+
+
+.contenedor-texto-espacial {
+    position: relative;
+    z-index: 10;
+    width: 90%;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    
+   
+    color: #f0f0f5; 
+    line-height: 1.9;
+    font-size: 1.25rem;
+    text-align: justify;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+}
+
+.contenedor-texto-espacial p {
+    margin-bottom: 1.8em;
+    text-indent: 40px; 
+}
+
+
+.boton-contenedor {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.boton-volver {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 12px 30px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+}
+
+.boton-volver:hover {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+    transform: translateY(-3px);
+}
+
+
+@media (max-width: 768px) {
+    .contenedor-texto-espacial {
+        width: 95%;
+        font-size: 1.1rem; 
+        line-height: 1.7;
+        padding: 10px;
+    }
+
+    .contenedor-texto-espacial p {
+        text-indent: 20px; 
+        margin-bottom: 1.3em;
+    }
+
+    .boton-volver {
+        padding: 10px 20px;
+        font-size: 0.85rem;
+    }
+}
